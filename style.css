@@ -234,6 +234,21 @@ h1 {
   }
 }
 
+#nancy{
+  margin: 1rem;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#story-buttons{
+  display:inline-block;
+
+}
+
+#story{
+  display:block;
+}
 /* don't edit this */
 .jest-lite-report__status--pass {
   background: var(--color-pass);

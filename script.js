@@ -30,6 +30,35 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 
+//code blocks function story test
+var story;
+
+
+story = ['I have a dog', 'Her name is Nancy', 'My mum gives her a lot of treats', 'So she is quite chonky'];
+let element_text = document.getElementById('text');
+element_text.innerText = story[0];
+
+
+document.getElementById('next').addEventListener('click', (event) => {
+  let element_text2 = document.getElementById('text');
+  story.push(story[0]);
+  element_text2.innerText = story.shift();
+
+});
+
+document.getElementById('back').addEventListener('click', (event) => {
+  let element_text3 = document.getElementById('text');
+  story.unshift(story.slice(-1)[0]);
+  element_text3.innerText = story.pop();
+
+});
+
+document.getElementById('click').addEventListener('click', (event) => {
+  let element_nancy = document.getElementById('nancy');
+  element_nancy.setAttribute("src", 'https://i.imgur.com/Y19K17N.jpg');
+
+});
+
 /* =================
   TESTS, LOOK AT THESE
   Reading tests will always help you discover your requirements.
