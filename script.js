@@ -30,6 +30,78 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 
+// carousel project
+var pictures;
+
+
+pictures = ['https://i.imgur.com/1AhHHDU.jpg', 'https://i.imgur.com/OhYZSsa.jpg', 'https://i.imgur.com/NZauML6.jpg', 'https://i.imgur.com/RXSmRkz.jpg', 'https://i.imgur.com/Jx6GByr.jpg', 'https://i.imgur.com/RLknkT7.jpg', 'https://i.imgur.com/hXmoYh8.jpg'];
+let element_bec = document.getElementById('bec');
+pictures.push(pictures[0]);
+element_bec.setAttribute("src", pictures.shift());
+
+
+document.getElementById('btn_next').addEventListener('click', (event) => {
+  let element_bec2 = document.getElementById('bec');
+  pictures.push(pictures[0]);
+  element_bec2.setAttribute("src", pictures.shift());
+
+});
+
+document.getElementById('btn_previous').addEventListener('click', (event) => {
+  let element_bec3 = document.getElementById('bec');
+  pictures.unshift(pictures.slice(-1)[0]);
+  element_bec3.setAttribute("src", pictures.pop());
+
+});
+
+//commenting project
+function getNumberOrString(value) {
+  // Convert a string value to a number if possible
+  let number_value = Number(value);
+  if (Number.isNaN(number_value)) {
+    return value
+  } else {
+    return number_value
+  }
+}
+
+
+document.getElementById('btn_submit').addEventListener('click', (event) => {
+  let element_comment_list = document.getElementById('comment_list');
+  let new_li = document.createElement('li');
+  new_li.innerText = getNumberOrString(document.getElementById('comment').value);
+
+  element_comment_list.appendChild(new_li);
+
+});
+//commenting project end
+
+//hamburger menu
+var hamburger_open;
+
+
+let element_hamburger_content = document.getElementById('hamburger_content');
+element_hamburger_content.style.visibility = (false) ? 'visible' : 'hidden';
+hamburger_open = false;
+
+
+document.getElementById('btn_click').addEventListener('click', (event) => {
+  let element_hamburger_content2 = document.getElementById('hamburger_content');
+  if (hamburger_open == false) {
+    element_hamburger_content2.style.visibility = (true) ? 'visible' : 'hidden';
+    let element_btn_click = document.getElementById('btn_click');
+    element_btn_click.setAttribute("class", 'btn_styling bi bi-x-lg');
+    hamburger_open = true;
+  } else {
+    element_hamburger_content2.style.visibility = (false) ? 'visible' : 'hidden';
+    let element_btn_click2 = document.getElementById('btn_click');
+    element_btn_click2.setAttribute("class", 'btn_styling bi bi-list-stars');
+    hamburger_open = false;
+  }
+
+});
+//hamburger menu end
+
 /* =================
   TESTS, LOOK AT THESE
   Reading tests will always help you discover your requirements.
@@ -99,5 +171,5 @@ test("There are at least 500 words on the page", () => {
 const console = document.getElementById("tests");
 prettify.toHTML(run(), console);
 
-  let element_caption = document.getElementById('caption');
+let element_caption = document.getElementById('caption');
 element_caption.style.color = 'yellow';
