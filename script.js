@@ -76,6 +76,32 @@ document.getElementById('btn_submit').addEventListener('click', (event) => {
 });
 //commenting project end
 
+//hamburger menu
+var hamburger_open;
+
+
+let element_hamburger_content = document.getElementById('hamburger_content');
+element_hamburger_content.style.visibility = (false) ? 'visible' : 'hidden';
+hamburger_open = false;
+
+
+document.getElementById('btn_click').addEventListener('click', (event) => {
+  let element_hamburger_content2 = document.getElementById('hamburger_content');
+  if (hamburger_open == false) {
+    element_hamburger_content2.style.visibility = (true) ? 'visible' : 'hidden';
+    let element_btn_click = document.getElementById('btn_click');
+    element_btn_click.setAttribute("class", 'btn_styling bi bi-x-lg');
+    hamburger_open = true;
+  } else {
+    element_hamburger_content2.style.visibility = (false) ? 'visible' : 'hidden';
+    let element_btn_click2 = document.getElementById('btn_click');
+    element_btn_click2.setAttribute("class", 'btn_styling bi bi-list-stars');
+    hamburger_open = false;
+  }
+
+});
+//hamburger menu end
+
 /* =================
   TESTS, LOOK AT THESE
   Reading tests will always help you discover your requirements.

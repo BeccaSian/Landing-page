@@ -5,7 +5,8 @@
    ===================
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
 *,
 *::after,
@@ -17,7 +18,7 @@
 
 html,
 body {
-  font-family: "Indie Flower", cursive;
+  font-family: "Roboto Flex", sans-serif;
   margin: 0;
   height: 100%;
   font-size: 1.25rem;
@@ -80,13 +81,32 @@ h1 {
 }
 
 .grid-container>.grid-item {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 0.75rem;
   padding: 20px;
 }
 
 .center {
   margin: 0 auto;
+}
+
+.btn_styling {
+  background-color: #8C06E6;
+  border: solid white;
+  border-radius: 4px;
+  padding: 3px 25px 10px 25px;
+  text-align: center;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  place-items: center;
+  min-width: fit-content;
+}
+
+.btn_styling:hover {
+  color: white;
+  background-color: rgb(235, 39, 72);
 }
 
 .main-content {
@@ -224,9 +244,7 @@ h1 {
 }
 
 #btn_container>button {
-  border: solid black;
   padding: 0.5rem;
-  background-color: #600988;
 
 }
 
@@ -242,7 +260,7 @@ h1 {
 /*end carousel css*/
 
 /*commenting project*/
-#btn_submit {
+/*#btn_submit {
   background-color:#600988;
   border: solid white;
   border-radius: 4px;
@@ -255,23 +273,61 @@ h1 {
   place-items: center;
   min-width: fit-content;
   }
-  
-  #btn_submit:hover {
-  color: white;
-  }
-  
-  #comment {
+  */
+
+
+#comment {
   padding: 12px 20px;
-  border: 2px b#4BBD50;
   border-radius: 4px;
-  }
+}
 
-  #comment_list > li {
-    list-style-type: none;
-    }
-    /*commenting project end*/
+#comment_list>li {
+  list-style-type: none;
+}
+
+/*commenting project end*/
+
+/* hamburger menu*/
+
+#btn_click {
+  color: white;
+  border: solid white;
+  padding: 15px;
+  text-align: center;
+  font-size: 3rem;
+}
 
 
+
+#hamburger_content {
+  display: inline-block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+
+}
+
+#hamburger_content>ul>li>a {
+  text-decoration: none;
+  color: black;
+
+}
+
+#hamburger_content>ul>li>a:hover {
+  text-decoration: underline;
+}
+
+
+#hamburger_content>ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#hamburger_content>ul>li {
+  font-size: 1rem;
+}
+
+/*hamburger menu end*/
 
 @media screen and (min-width: 760px) {
   .grid-container {
